@@ -1,0 +1,125 @@
+{
+    "reviews": [
+      {
+        "professor": "Dr. Emily Parker",
+        "subject": "Physics",
+        "stars": 4,
+        "review": "Dr. Parker is knowledgeable and approachable, but her lectures can be a bit fast-paced."
+      },
+      {
+        "professor": "Professor John Smith",
+        "subject": "Mathematics",
+        "stars": 5,
+        "review": "Excellent professor! Clear explanations and very helpful during office hours."
+      },
+      {
+        "professor": "Dr. Karen Lee",
+        "subject": "Biology",
+        "stars": 3,
+        "review": "Good professor, but the exams are difficult and often cover material not discussed in class."
+      },
+      {
+        "professor": "Professor Mark Johnson",
+        "subject": "Computer Science",
+        "stars": 4,
+        "review": "Great professor with a lot of industry experience. Assignments are challenging but fair."
+      },
+      {
+        "professor": "Dr. Susan Davis",
+        "subject": "Chemistry",
+        "stars": 2,
+        "review": "Dr. Davis knows her stuff, but she doesn't engage well with students. Lectures can be boring."
+      },
+      {
+        "professor": "Professor Michael Brown",
+        "subject": "History",
+        "stars": 5,
+        "review": "Fantastic lecturer! Makes history come alive with engaging stories and discussions."
+      },
+      {
+        "professor": "Dr. Linda White",
+        "subject": "Psychology",
+        "stars": 4,
+        "review": "Interesting classes and helpful feedback on assignments. Sometimes unclear on expectations."
+      },
+      {
+        "professor": "Professor James Wilson",
+        "subject": "Economics",
+        "stars": 3,
+        "review": "Knows the material well, but his teaching style is dry and hard to follow."
+      },
+      {
+        "professor": "Dr. Maria Gonzalez",
+        "subject": "Sociology",
+        "stars": 5,
+        "review": "Dr. Gonzalez is amazing! Very passionate about the subject and always willing to help."
+      },
+      {
+        "professor": "Professor Robert Green",
+        "subject": "Political Science",
+        "stars": 4,
+        "review": "Engaging lecturer with a wealth of knowledge. Assignments are tough but rewarding."
+      },
+      {
+        "professor": "Dr. Angela Harris",
+        "subject": "English Literature",
+        "stars": 5,
+        "review": "Wonderful professor! Encourages deep thinking and offers great feedback on papers."
+      },
+      {
+        "professor": "Professor Charles Robinson",
+        "subject": "Philosophy",
+        "stars": 3,
+        "review": "Interesting ideas, but often goes off on tangents. Not the most organized lectures."
+      },
+      {
+        "professor": "Dr. Jessica Moore",
+        "subject": "Art History",
+        "stars": 4,
+        "review": "Dr. Moore is very knowledgeable and passionate about art, but her lectures can be a bit dry."
+      },
+      {
+        "professor": "Professor Daniel Clark",
+        "subject": "Mechanical Engineering",
+        "stars": 4,
+        "review": "Challenging but fair. Professor Clark has a lot of practical experience and shares real-world examples."
+      },
+      {
+        "professor": "Dr. Sarah Taylor",
+        "subject": "Environmental Science",
+        "stars": 5,
+        "review": "Dr. Taylor is an excellent teacher. Very supportive and makes the subject matter interesting."
+      },
+      {
+        "professor": "Professor Richard Martinez",
+        "subject": "Business Management",
+        "stars": 3,
+        "review": "Good professor, but his lectures can be a bit repetitive. Assignments are straightforward."
+      },
+      {
+        "professor": "Dr. Patricia Anderson",
+        "subject": "Chemistry",
+        "stars": 4,
+        "review": "Dr. Anderson is a solid professor. Clear explanations, but her exams are tough."
+      },
+      {
+        "professor": "Professor Thomas Baker",
+        "subject": "Anthropology",
+        "stars": 4,
+        "review": "Engaging and insightful. Professor Baker makes anthropology fascinating with his real-life examples."
+      },
+      {
+        "professor": "Dr. Rebecca Hall",
+        "subject": "Music Theory",
+        "stars": 5,
+        "review": "Fantastic professor! Dr. Hall makes complex concepts easy to understand and offers great support."
+      },
+      {
+        "professor": "Professor Steven Wright",
+        "subject": "Physics",
+        "stars": 2,
+        "review": "Knows the material, but his lectures are hard to follow. Not very approachable outside of class."
+      }
+    ]
+  }
+  
