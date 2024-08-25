@@ -29,15 +29,21 @@ export default function Home() {
 
   const sendMessage = async () => {
     if (!message.trim() || isLoading) return;
-    setIsLoading(true)
-    
-    setMessage('')
+    setIsLoading(true);
+  
+    // Capture the current message before clearing the input
+    const currentMessage = message;
+  
+    setMessage('');
     setMessages((messages) => [
       ...messages,
-      {role: 'user', content: message},
-      {role: 'assistant', content: ''},
-    ])
-  }
+      { role: 'user', content: currentMessage },
+      { role: 'assistant', content: '' },
+    ]);
+  
+    await fetchAndProcessResponse([...messages, { role: 'user', content: currentMessage }]);
+  };
+  
 
   //Allows the user to use the enter button to sned a message
   const handleKeyPress = (event) => {
@@ -48,34 +54,53 @@ export default function Home() {
   }
 
 
-/* Implement when the API setup is complete
-  const response = fetch('/api/chat', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify([...messages, {role: 'user', content: message}]),
-  }).then(async (res) => {
-    const reader = res.body.getReader()
-    const decoder = new TextDecoder()
-    let result = ''
-
-    return reader.read().then(function processText({done, value}) {
-      if (done) {
-        return result
+  async function fetchAndProcessResponse(messages) {
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(messages),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-      const text = decoder.decode(value || new Uint8Array(), {stream: true})
-      setMessages((messages) => {
-        let lastMessage = messages[messages.length - 1]
-        let otherMessages = messages.slice(0, messages.length - 1)
-        return [
-          ...otherMessages,
-          {...lastMessage, content: lastMessage.content + text},
-        ]
-      })
-      setIsLoading(false)
-      return reader.read().then(processText)
-    })*/
+      
+      console.log(response);
+      
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let result = '';
+  
+      async function processText({ done, value }) {
+        if (done) {
+          setIsLoading(false);
+          return result;
+        }
+  
+        const text = decoder.decode(value || new Uint8Array(), { stream: true });
+        result += text;
+  
+        setMessages((prevMessages) => {
+          const lastMessage = prevMessages[prevMessages.length - 1];
+          const otherMessages = prevMessages.slice(0, prevMessages.length - 1);
+          return [...otherMessages, { ...lastMessage, content: lastMessage.content + text }];
+        });
+  
+        return reader.read().then(processText);
+      }
+  
+      await reader.read().then(processText);
+    } catch (error) {
+      console.error('Error while processing the response:', error);
+      setIsLoading(false);
+    }
+  }
+  
+  
+  
 
   
   return (
