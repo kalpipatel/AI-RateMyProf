@@ -3,7 +3,7 @@
 'use client'
 
 import { useState } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { Box, Button, TextField, Stack } from '@mui/material';
 import { registerUser } from '../auth'; 
 
@@ -17,7 +17,7 @@ export default function SignUp() {
   const handleSignUp = async () => {
     try {
       await registerUser(email, password);
-      router.push('/page'); // Redirect to the login page after sign-up
+      router.push('/chatbot'); // Redirect to the login page after sign-up
     } catch (error) {
       setError('Sign-up failed. Please try again.');
     }
