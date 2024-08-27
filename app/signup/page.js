@@ -5,7 +5,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { Box, Button, TextField, Stack } from '@mui/material';
-import { registerUser } from '../lib/auth'; // Adjust the import path if needed
+import { registerUser } from '../auth'; 
+
 
 export default function SignUp() {
   const [email, setEmail] = useState('');
