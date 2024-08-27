@@ -11,8 +11,6 @@ import {
   Button, 
   Stack, 
   TextField, 
-  AppBar, 
-  Toolbar, 
   Typography, 
   Avatar,
   Divider, } from '@mui/material';
@@ -70,8 +68,6 @@ export default function Home() {
   }
 
 
-
-
   async function fetchAndProcessResponse(messages) {
     try {
       const response = await fetch('/api/chat', {
@@ -116,11 +112,7 @@ export default function Home() {
       setIsLoading(false);
     }
   }
-  
-  
-  
 
-  
   return (
    <ThemeProvider theme={theme}>
       <Box
@@ -131,70 +123,6 @@ export default function Home() {
         alignItems="center"
         backgroundColor="#e8d1b6"
       >
-
-             {/* Authentication UI
-             {!isAuthenticated && (
-          <Box sx={{ mb: 4 }}>
-            <TextField
-              label="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              sx={{ mb: 2 }}
-            />
-            <TextField
-              label="Password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              sx={{ mb: 2 }}
-            />
-            <Stack direction="row" spacing={2}>
-              <Button variant="contained" onClick={handleLogin}>
-                Log In
-              </Button>
-              <Button variant="outlined" onClick={handleSignUp}>
-                Sign Up
-              </Button>
-            </Stack>
-          </Box>
-        )} */}
-
-        {/*Possible Nav Bar but Considering Removing this
-        <AppBar position="fixed">
-          <Toolbar display="flex">
-            <Box
-              sx={{
-                //margin: 0,
-                padding: 0.5,
-                backgroundColor: 'black',
-                //clipPath: 'polygon(0 0, 0 100%, 85% 100%, 100% 0%)',
-              }}
-            >
-              <Typography 
-              variant="h5"
-              textTransform="uppercase" 
-              fontWeight="bold"
-              >Rate My</Typography>
-            </Box>
-            <Box
-              sx={{
-                //margin: 0,
-                backgroundColor: 'white',
-                //clipPath: 'polygon(85 0, 0 0, 0 0%, 0% 0%)',
-                color: 'black',
-                padding: 0.5,
-              }}
-            >
-              <Typography 
-              variant="h5" 
-              textTransform="uppercase" 
-              fontWeight="bold"
-              >Professor</Typography>
-            </Box>
-            <Typography  variant="h6">Support Assistant</Typography>
-          </Toolbar>
-        </AppBar>*/}
-        
 
         <Box 
         backgroundColor=""
