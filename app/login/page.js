@@ -2,7 +2,14 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Box, Button, TextField, Stack } from '@mui/material';
+
+import {
+  Box, 
+  Button, 
+  Stack, 
+  TextField, 
+  Typography, 
+ } from '@mui/material';
 
 import { loginUser, registerUser } from '../auth'; // Update path as needed
 
@@ -36,7 +43,21 @@ export default function Login() {
   };
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" height="100vh">
+    <Box 
+      backgroundColor="#e8d1b6"
+      display="flex" 
+      flexDirection="column" 
+      alignItems="center" 
+      justifyContent="center" 
+      height="100vh"
+    >
+      <Typography variant="h4" component="h1" mb={4}>
+        Welcome to our Rate My Professor Support Assistant! 
+      </Typography>
+      <Typography variant="h6" component="p" mb={6}>
+        Please log in to get started. 
+      </Typography>
+
       <Stack spacing={2} width="300px">
         <TextField
           label="Email"
@@ -49,7 +70,7 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {error && <Typography color="error">{error}</Typography>}
         <Stack direction="row" spacing={2}>
           <Button variant="contained" onClick={handleLogin}>
             Log In

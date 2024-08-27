@@ -13,9 +13,13 @@ export async function POST(req, res) {
         // Generate content using the prompt
         const result = await model.generateContent(prompt);
         const response = result.response;
-        const output = response.candidates[0].content.parts[0].text;
+        let output = response.candidates[0].content.parts[0].text;
 
-        return NextResponse.json({ output: output });
+        output = output.replace(/\n/g, ' ').trim();
+
+        return new NextResponse(output, {
+            headers: { 'Content-Type': 'text/plain' },
+        });
     } catch (error) {
         console.error(error);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
